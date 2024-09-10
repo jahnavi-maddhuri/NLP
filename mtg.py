@@ -1,3 +1,5 @@
+'''Markov Text Generation methods'''
+
 import nltk
 import random
 nltk.download('gutenberg')
@@ -8,7 +10,7 @@ nltk.download('punkt_tab')
 def train_n_gram(corpus, n):
     '''Given a corpus and a desired integer for the ngram, return count of n+1 token combinations'''
     context_dict = dict()
-    for i in range(len(corpus) - n):
+    for i in range(len(corpus) - n + 1):
         token_comb = tuple(corpus[i:i+n])
         if token_comb[:-1] in context_dict:
             if token_comb[-1] in context_dict[token_comb[:-1]]:
