@@ -2,6 +2,7 @@ import nltk
 import random
 nltk.download('gutenberg')
 nltk.download('punkt')
+nltk.download('punkt_tab')
 
 
 def train_n_gram(corpus, n):
